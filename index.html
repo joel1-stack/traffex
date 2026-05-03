@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Traffex Tours & Travel – Kenya's trusted travel agency. Safari packages, visa assistance, flight booking & more. Book instantly via M-Pesa.">
-  <title>Traffex Tours & Travel | Explore Kenya & Beyond</title>
+  <meta name="description" content="Traffex Tours and Travel - Kenya's trusted travel agency. Safari packages, visa assistance, flight booking and more.">
+  <title>Traffex Tours &amp; Travel | Explore Kenya &amp; Beyond</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,36 +20,42 @@
         <li><a href="booking.html">Book Now</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="mobile-menu" aria-label="Toggle menu">☰</button>
+      <button class="mobile-menu" aria-label="Toggle menu">&#9776;</button>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero with Video Background -->
   <section class="hero">
-    <h1>Discover Kenya's Finest Destinations</h1>
-    <p>Professional tours, visa assistance, flight booking & more. Your journey starts with one click — pay instantly via M-Pesa.</p>
-    <div class="hero-btns">
-      <a href="packages.html" class="btn btn-secondary">View Packages</a>
-      <a href="booking.html" class="btn btn-outline" style="border-color:#fff; color:#fff;">Book Instantly</a>
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="https://assets.mixkit.co/videos/4926/4926-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Discover Kenya's Finest Destinations</h1>
+      <p>Professional tours, visa assistance, flight booking and more. Your journey starts with one click - pay instantly via M-Pesa.</p>
+      <div class="hero-btns">
+        <a href="packages.html" class="btn btn-secondary">View Packages</a>
+        <a href="booking.html" class="btn btn-outline-white">Book Instantly</a>
+      </div>
     </div>
   </section>
 
   <!-- Stats Bar -->
   <div class="stats-bar">
-    <div class="inner">
-      <div>
+    <div class="stats-inner">
+      <div class="stat-item">
         <div class="stat-num">500+</div>
         <div class="stat-label">Happy Travelers</div>
       </div>
-      <div>
+      <div class="stat-item">
         <div class="stat-num">50+</div>
         <div class="stat-label">Destinations</div>
       </div>
-      <div>
-        <div class="stat-num">5★</div>
+      <div class="stat-item">
+        <div class="stat-num">5 Star</div>
         <div class="stat-label">Customer Rating</div>
       </div>
-      <div>
+      <div class="stat-item">
         <div class="stat-num">24/7</div>
         <div class="stat-label">WhatsApp Support</div>
       </div>
@@ -60,98 +66,124 @@
   <div class="section-wrap">
     <div class="section-inner">
       <h2 class="section-title">Popular Packages</h2>
-      <p class="section-subtitle">Hand-picked experiences at transparent prices — no hidden fees</p>
+      <p class="section-subtitle">Hand-picked experiences at transparent prices - no hidden fees</p>
       <div class="grid">
 
         <div class="card">
-          <div class="card-img" style="background:linear-gradient(135deg,#0B4F6C,#2ECC71);">🦁</div>
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Masai Mara Safari" loading="lazy">
+            <span class="card-badge">Most Popular</span>
+          </div>
           <div class="card-body">
-            <span class="badge">🔥 Most Popular</span>
             <h3>Masai Mara Classic</h3>
-            <p>Witness the Big Five in Kenya's most iconic reserve. Game drives, tented camps & sunrise views.</p>
+            <p>Witness the Big Five in Kenya's most iconic reserve. Game drives, tented camps and sunrise views.</p>
             <div class="price">KSh 35,000</div>
-            <div class="meta">📅 3 Days · 2 Nights · All Inclusive · Group Safari</div>
+            <div class="meta">3 Days &middot; 2 Nights &middot; All Inclusive &middot; Group Safari</div>
             <div class="card-actions">
-              <a href="booking.html?package=mara-3day" class="btn btn-primary">Book Now</a>
-              <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%27m%20interested%20in%20the%20Masai%20Mara%20Classic%20package" class="btn btn-outline" target="_blank">Enquire</a>
+              <a href="booking.html?package=mara-3day" class="btn btn-primary btn-sm">Book Now</a>
+              <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20am%20interested%20in%20Masai%20Mara%20Classic" class="btn btn-outline btn-sm" target="_blank">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-img" style="background:linear-gradient(135deg,#D4AF37,#F39C12);">🐘</div>
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Amboseli Safari" loading="lazy">
+            <span class="card-badge">Scenic</span>
+          </div>
           <div class="card-body">
-            <span class="badge">🌄 Scenic</span>
             <h3>Amboseli Adventure</h3>
             <p>Elephant herds with Mount Kilimanjaro as your backdrop. Perfect for photographers.</p>
             <div class="price">KSh 28,000</div>
-            <div class="meta">📅 3 Days · 2 Nights · Full Board</div>
+            <div class="meta">3 Days &middot; 2 Nights &middot; Full Board</div>
             <div class="card-actions">
-              <a href="booking.html?package=amboseli-3day" class="btn btn-primary">Book Now</a>
-              <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%27m%20interested%20in%20Amboseli%20Adventure" class="btn btn-outline" target="_blank">Enquire</a>
+              <a href="booking.html?package=amboseli-3day" class="btn btn-primary btn-sm">Book Now</a>
+              <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20am%20interested%20in%20Amboseli%20Adventure" class="btn btn-outline btn-sm" target="_blank">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-img" style="background:linear-gradient(135deg,#1ABC9C,#16A085);">🏖️</div>
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Diani Beach" loading="lazy">
+            <span class="card-badge">Beach</span>
+          </div>
           <div class="card-body">
-            <span class="badge">🌊 Beach</span>
             <h3>Diani Beach Escape</h3>
             <p>White sands, turquoise waters, and pure coastal relaxation. Swahili cuisine included.</p>
             <div class="price">KSh 45,000</div>
-            <div class="meta">📅 4 Days · 3 Nights · Half Board</div>
+            <div class="meta">4 Days &middot; 3 Nights &middot; Half Board</div>
             <div class="card-actions">
-              <a href="booking.html?package=diani-4day" class="btn btn-primary">Book Now</a>
-              <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%27m%20interested%20in%20Diani%20Beach%20Escape" class="btn btn-outline" target="_blank">Enquire</a>
+              <a href="booking.html?package=diani-4day" class="btn btn-primary btn-sm">Book Now</a>
+              <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20am%20interested%20in%20Diani%20Beach%20Escape" class="btn btn-outline btn-sm" target="_blank">Enquire</a>
             </div>
           </div>
         </div>
 
       </div>
       <div style="text-align:center; margin-top:2rem;">
-        <a href="packages.html" class="btn btn-outline">View All Packages →</a>
+        <a href="packages.html" class="btn btn-outline">View All Packages</a>
       </div>
     </div>
   </div>
 
   <!-- Why Choose Us -->
-  <div class="section-wrap" style="background:#fff;">
+  <div class="section-wrap bg-white">
     <div class="section-inner">
       <h2 class="section-title">Why Choose Traffex?</h2>
-      <p class="section-subtitle">We do what competitors don't — and that's why travelers trust us</p>
-      <div class="grid">
-        <div style="text-align:center; padding:1.5rem;">
-          <div class="feature-icon" style="margin:0 auto 1rem;">💰</div>
-          <h3 style="color:var(--primary); margin-bottom:0.5rem;">Instant M-Pesa Pay</h3>
-          <p style="color:var(--text-light);">Reserve your trip in 30 seconds. No bank queues, no waiting. STK Push straight to your phone.</p>
+      <p class="section-subtitle">We do what competitors don't - and that's why travelers trust us</p>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png" alt="M-Pesa" width="32" height="32">
+          </div>
+          <h3>Instant M-Pesa Pay</h3>
+          <p>Reserve your trip in 30 seconds. No bank queues, no waiting. STK Push straight to your phone.</p>
         </div>
-        <div style="text-align:center; padding:1.5rem;">
-          <div class="feature-icon" style="margin:0 auto 1rem;">📋</div>
-          <h3 style="color:var(--primary); margin-bottom:0.5rem;">Visa Experts</h3>
-          <p style="color:var(--text-light);">USA, UK, Schengen, Dubai & more. We handle the paperwork so you focus on packing.</p>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Visa" width="32" height="32">
+          </div>
+          <h3>Visa Experts</h3>
+          <p>USA, UK, Schengen, Dubai and more. We handle the paperwork so you focus on packing.</p>
         </div>
-        <div style="text-align:center; padding:1.5rem;">
-          <div class="feature-icon" style="margin:0 auto 1rem;">✈️</div>
-          <h3 style="color:var(--primary); margin-bottom:0.5rem;">One-Stop Shop</h3>
-          <p style="color:var(--text-light);">Flights, hotels, tours, visa & school applications — all under one roof.</p>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/984/984233.png" alt="Flights" width="32" height="32">
+          </div>
+          <h3>One-Stop Shop</h3>
+          <p>Flights, hotels, tours, visa and school applications - all under one roof.</p>
         </div>
-        <div style="text-align:center; padding:1.5rem;">
-          <div class="feature-icon" style="margin:0 auto 1rem;">💬</div>
-          <h3 style="color:var(--primary); margin-bottom:0.5rem;">15-Min WhatsApp Reply</h3>
-          <p style="color:var(--text-light);">While competitors take 24 hours, we reply in 15 minutes — even at night.</p>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="32" height="32">
+          </div>
+          <h3>15-Min WhatsApp Reply</h3>
+          <p>While competitors take 24 hours, we reply in 15 minutes - even at night.</p>
         </div>
-        <div style="text-align:center; padding:1.5rem;">
-          <div class="feature-icon" style="margin:0 auto 1rem;">💲</div>
-          <h3 style="color:var(--primary); margin-bottom:0.5rem;">Transparent Pricing</h3>
-          <p style="color:var(--text-light);">No hidden costs. See the full price before you book — unlike competitors who hide it.</p>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489624.png" alt="Pricing" width="32" height="32">
+          </div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden costs. See the full price before you book - unlike competitors who hide it.</p>
         </div>
-        <div style="text-align:center; padding:1.5rem;">
-          <div class="feature-icon" style="margin:0 auto 1rem;">🌍</div>
-          <h3 style="color:var(--primary); margin-bottom:0.5rem;">Diaspora Friendly</h3>
-          <p style="color:var(--text-light);">Book trips for family in Kenya from the UK, US or anywhere. PayPal & M-Pesa accepted.</p>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3097/3097144.png" alt="Diaspora" width="32" height="32">
+          </div>
+          <h3>Diaspora Friendly</h3>
+          <p>Book trips for family in Kenya from the UK, US or anywhere. PayPal and M-Pesa accepted.</p>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Nairobi Image Banner -->
+  <div class="img-banner" style="background-image: url('https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+    <div class="img-banner-overlay">
+      <h2>Based in Nairobi, Serving the World</h2>
+      <p>From the heart of Kenya to your dream destination</p>
     </div>
   </div>
 
@@ -162,19 +194,19 @@
       <p class="section-subtitle">Real reviews from real customers</p>
       <div class="grid">
         <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>Booked the Masai Mara package and paid via M-Pesa in under a minute. The trip was absolutely incredible. Traffex handled everything perfectly!</p>
-          <div class="author">— John K., Nairobi</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Booked the Masai Mara package and paid via M-Pesa in under a minute. The trip was absolutely incredible. Traffex handled everything perfectly!"</p>
+          <div class="author">- John K., Nairobi</div>
         </div>
         <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>They helped me get my UK visa approved on the first attempt. The document checklist they provided was spot on. Highly recommend their visa service!</p>
-          <div class="author">— Grace W., Westlands</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"They helped me get my UK visa approved on the first attempt. The document checklist they provided was spot on. Highly recommend their visa service!"</p>
+          <div class="author">- Grace W., Westlands</div>
         </div>
         <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>I'm in London and booked a Christmas safari for my parents in Nairobi. Traffex made it so easy — WhatsApp communication was seamless throughout.</p>
-          <div class="author">— David O., London (Diaspora)</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"I am in London and booked a Christmas safari for my parents in Nairobi. Traffex made it so easy - WhatsApp communication was seamless throughout."</p>
+          <div class="author">- David O., London (Diaspora)</div>
         </div>
       </div>
     </div>
@@ -184,22 +216,21 @@
   <div class="cta-banner">
     <h2>Ready to Start Your Journey?</h2>
     <p>Get a free quote in under 2 minutes. No hidden fees. Pay deposit via M-Pesa.</p>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="booking.html" class="btn btn-secondary" style="font-size:1.1rem; padding:1rem 2rem;">Book Now</a>
-      <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20want%20to%20plan%20a%20trip!" class="btn btn-outline" style="border-color:#fff; color:#fff; font-size:1.1rem; padding:1rem 2rem;" target="_blank">💬 Chat on WhatsApp</a>
+    <div class="cta-btns">
+      <a href="booking.html" class="btn btn-secondary btn-lg">Book Now</a>
+      <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20want%20to%20plan%20a%20trip!" class="btn btn-outline-white btn-lg" target="_blank">Chat on WhatsApp</a>
     </div>
   </div>
 
   <footer>
     <div class="footer-grid">
       <div>
-        <h4>Traffex Tours & Travel</h4>
-        <p>Your trusted partner for local & international travel. Based in Kenya, serving the world.</p>
+        <h4>Traffex Tours &amp; Travel</h4>
+        <p>Your trusted partner for local and international travel. Based in Kenya, serving the world.</p>
         <div class="social-links">
-          <a href="#" title="Facebook">📘</a>
-          <a href="#" title="Instagram">📸</a>
-          <a href="#" title="Twitter">🐦</a>
-          <a href="https://wa.me/254700723928" title="WhatsApp" target="_blank">💬</a>
+          <a href="#" title="Facebook">FB</a>
+          <a href="#" title="Instagram">IG</a>
+          <a href="https://wa.me/254700723928" title="WhatsApp" target="_blank">WA</a>
         </div>
       </div>
       <div>
@@ -221,21 +252,22 @@
       </div>
       <div>
         <h4>Contact Us</h4>
-        <a href="tel:+254700723928">📞 0700 723 928</a>
-        <a href="mailto:info@traffextours.com">✉️ info@traffextours.com</a>
-        <a href="https://wa.me/254700723928" target="_blank">💬 WhatsApp Chat</a>
-        <p style="margin-top:0.5rem;">📍 Nairobi, Kenya</p>
-        <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+        <a href="tel:+254700723928">Phone: 0700 723 928</a>
+        <a href="mailto:info@traffextours.com">info@traffextours.com</a>
+        <a href="https://wa.me/254700723928" target="_blank">WhatsApp Chat</a>
+        <p>Nairobi, Kenya</p>
+        <p>Mon-Sat: 8:00 AM - 6:00 PM</p>
       </div>
     </div>
     <div class="copyright">
-      © 2025 Traffex Tours & Travel. All rights reserved. | <a href="admin.html" style="color:#555;">Admin</a>
+      &copy; 2025 Traffex Tours &amp; Travel. All rights reserved.
+      | <a href="admin.html" style="color:#555;">Admin</a>
     </div>
   </footer>
 
   <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20want%20to%20enquire%20about%20your%20travel%20packages." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-    💬
-    <span class="tooltip">Chat with us!</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="30" height="30">
+    <span class="wa-tooltip">Chat with us!</span>
   </a>
 
   <script src="main.js"></script>

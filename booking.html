@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Book your trip with Traffex Tours & Travel. Select a package, choose your date, and pay a deposit via M-Pesa instantly.">
-  <title>Book Now | Traffex Tours & Travel</title>
+  <title>Book Now | Traffex Tours &amp; Travel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,15 +19,14 @@
         <li><a href="booking.html" class="active">Book Now</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="mobile-menu" aria-label="Toggle menu">☰</button>
+      <button class="mobile-menu" aria-label="Toggle menu">&#9776;</button>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" style="padding:3.5rem 2rem;">
+  <div class="hero-plain">
     <h1>Book Your Trip</h1>
-    <p>Fill the form below. Pay a KSh 5,000 deposit via M-Pesa to secure your slot instantly — balance due 7 days before travel.</p>
-  </section>
+    <p>Fill the form below. Pay a KSh 5,000 deposit via M-Pesa to secure your slot instantly.</p>
+  </div>
 
   <div class="section-wrap">
     <div class="section-inner">
@@ -37,6 +35,7 @@
         <!-- Booking Form -->
         <div class="form-box">
           <h2>Booking Enquiry Form</h2>
+          <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size:0.9rem;">We confirm via WhatsApp within 15 minutes of submission.</p>
           <form id="bookingForm">
 
             <div class="form-row">
@@ -65,23 +64,23 @@
               <label>Select Package *</label>
               <select name="package" id="package" required>
                 <option value="">-- Choose a package --</option>
-                <optgroup label="🦁 Local Safaris">
-                  <option value="mara-3day">Masai Mara Classic – KSh 35,000/person</option>
-                  <option value="amboseli-tsavo">Amboseli & Tsavo Combo – KSh 42,000/person</option>
-                  <option value="amboseli-3day">Amboseli Budget Safari – KSh 28,000/person</option>
+                <optgroup label="Local Safaris">
+                  <option value="mara-3day">Masai Mara Classic - KSh 35,000/person</option>
+                  <option value="amboseli-tsavo">Amboseli &amp; Tsavo Combo - KSh 42,000/person</option>
+                  <option value="amboseli-3day">Amboseli Budget Safari - KSh 28,000/person</option>
                 </optgroup>
-                <optgroup label="🏖️ Beach">
-                  <option value="diani-4day">Diani Beach Luxury – KSh 45,000/person</option>
+                <optgroup label="Beach">
+                  <option value="diani-4day">Diani Beach Luxury - KSh 45,000/person</option>
                 </optgroup>
-                <optgroup label="✈️ International">
-                  <option value="international-dubai">Dubai Shopping & City – KSh 120,000/person</option>
+                <optgroup label="International">
+                  <option value="international-dubai">Dubai Shopping &amp; City - KSh 120,000/person</option>
                 </optgroup>
-                <optgroup label="📋 Visa Services">
-                  <option value="visa-usa">USA Visa Assistance – KSh 8,000</option>
-                  <option value="visa-uk">UK Visa Assistance – KSh 8,000</option>
-                  <option value="visa-schengen">Schengen Visa Assistance – KSh 8,000</option>
+                <optgroup label="Visa Services">
+                  <option value="visa-usa">USA Visa Assistance - KSh 8,000</option>
+                  <option value="visa-uk">UK Visa Assistance - KSh 8,000</option>
+                  <option value="visa-schengen">Schengen Visa Assistance - KSh 8,000</option>
                 </optgroup>
-                <optgroup label="🎨 Custom">
+                <optgroup label="Custom">
                   <option value="custom">Custom Package (Describe below)</option>
                 </optgroup>
               </select>
@@ -98,10 +97,9 @@
               </div>
             </div>
 
-            <!-- Price Display -->
             <div class="price-display" id="totalPrice">
               <div class="amount">KSh 0</div>
-              <small>Estimated total · Final price confirmed via WhatsApp</small>
+              <small>Estimated total &middot; Final price confirmed via WhatsApp</small>
             </div>
 
             <div class="form-group">
@@ -114,67 +112,64 @@
               <textarea name="message" rows="4" placeholder="Dietary needs, pickup location, custom destination, budget range..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width:100%; padding:1rem; font-size:1.05rem;">
-              📩 Submit Booking Enquiry
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              Submit Booking Enquiry
             </button>
-            <p style="text-align:center; color:var(--text-light); font-size:0.85rem; margin-top:0.75rem;">
+            <p style="text-align:center; color:var(--text-muted); font-size:0.82rem; margin-top:0.75rem;">
               We will confirm your booking via WhatsApp within 15 minutes
             </p>
           </form>
 
           <!-- M-Pesa Deposit -->
           <div class="mpesa-section">
-            <h3>💳 Secure Your Slot with M-Pesa Deposit</h3>
-            <p style="color:var(--text-light); margin-bottom:1rem;">Pay KSh 5,000 deposit now to lock in your booking. Balance due 7 days before travel date.</p>
-            <div class="mpesa-logo">
-              <span>M</span> M-PESA
-            </div>
+            <h3>Secure Your Slot with M-Pesa Deposit</h3>
+            <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.9rem;">Pay KSh 5,000 deposit now to lock in your booking. Balance due 7 days before travel date.</p>
+            <div class="mpesa-logo">M-PESA</div>
             <div class="form-group">
               <label>Your M-Pesa Number</label>
-              <input type="tel" id="mpesaPhone" placeholder="e.g. 0700723928 or 254700723928">
+              <input type="tel" id="mpesaPhone" placeholder="e.g. 0700723928">
             </div>
-            <button id="mpesaBtn" class="btn btn-accent" style="width:100%; padding:1rem; font-size:1.05rem;">
-              📱 Pay KSh 5,000 Deposit via M-Pesa
+            <button id="mpesaBtn" class="btn btn-accent btn-block btn-lg">
+              Pay KSh 5,000 Deposit via M-Pesa
             </button>
-            <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-light);">
-              You will receive an STK Push on your phone. Enter your M-Pesa PIN to confirm. Your booking is secured immediately after payment.
+            <p style="margin-top:0.75rem; font-size:0.82rem; color:var(--text-muted);">
+              You will receive an STK Push on your phone. Enter your M-Pesa PIN to confirm.
             </p>
           </div>
         </div>
 
-        <!-- Sidebar Info -->
+        <!-- Sidebar -->
         <div>
-          <!-- Why Book With Us -->
           <div class="card" style="padding:2rem; margin-bottom:1.5rem;">
-            <h3 style="color:var(--primary); margin-bottom:1rem;">✅ Why Book With Traffex?</h3>
-            <ul style="list-style:none; color:var(--text-light); line-height:2;">
-              <li>✓ Transparent pricing — no hidden fees</li>
-              <li>✓ M-Pesa deposit secures your slot instantly</li>
-              <li>✓ WhatsApp confirmation within 15 minutes</li>
-              <li>✓ Free cancellation up to 7 days before travel</li>
-              <li>✓ Custom packages available on request</li>
-              <li>✓ Diaspora? Pay via PayPal — we handle the rest</li>
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Trust" width="40" style="margin-bottom:0.75rem;">
+            <h3 style="color:var(--primary); margin-bottom:1rem;">Why Book With Traffex?</h3>
+            <ul style="list-style:none; color:var(--text-muted); line-height:2.2; font-size:0.9rem;">
+              <li>&#10003; Transparent pricing - no hidden fees</li>
+              <li>&#10003; M-Pesa deposit secures your slot instantly</li>
+              <li>&#10003; WhatsApp confirmation within 15 minutes</li>
+              <li>&#10003; Free cancellation up to 7 days before travel</li>
+              <li>&#10003; Custom packages available on request</li>
+              <li>&#10003; Diaspora? Pay via PayPal - we handle the rest</li>
             </ul>
           </div>
 
-          <!-- Contact Card -->
           <div class="card" style="padding:2rem; margin-bottom:1.5rem;">
-            <h3 style="color:var(--primary); margin-bottom:1rem;">💬 Need Help Booking?</h3>
-            <p style="color:var(--text-light); margin-bottom:1rem;">Our travel consultants are available 7 days a week to help you choose the right package.</p>
-            <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20need%20help%20booking%20a%20trip" class="btn btn-accent" style="width:100%; margin-bottom:0.75rem; display:block;" target="_blank">💬 Chat on WhatsApp</a>
-            <a href="tel:+254700723928" class="btn btn-outline" style="width:100%; display:block;">📞 Call 0700 723 928</a>
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="40" style="margin-bottom:0.75rem;">
+            <h3 style="color:var(--primary); margin-bottom:1rem;">Need Help Booking?</h3>
+            <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.9rem;">Our travel consultants are available 7 days a week to help you choose the right package.</p>
+            <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20need%20help%20booking%20a%20trip" class="btn btn-accent btn-block" style="margin-bottom:0.75rem;" target="_blank">Chat on WhatsApp</a>
+            <a href="tel:+254700723928" class="btn btn-outline btn-block">Call 0700 723 928</a>
           </div>
 
-          <!-- Deposit Info -->
-          <div class="card" style="padding:2rem; background:rgba(11,79,108,0.05); border:1px solid rgba(11,79,108,0.2);">
-            <h3 style="color:var(--primary); margin-bottom:1rem;">📋 Booking Process</h3>
-            <ol style="color:var(--text-light); padding-left:1.2rem; line-height:2.2; font-size:0.95rem;">
+          <div class="card" style="padding:2rem; background:rgba(11,79,108,0.04); border:1px solid rgba(11,79,108,0.15);">
+            <h3 style="color:var(--primary); margin-bottom:1rem;">Booking Process</h3>
+            <ol style="color:var(--text-muted); padding-left:1.2rem; line-height:2.4; font-size:0.9rem;">
               <li>Submit the booking form above</li>
               <li>We confirm via WhatsApp in 15 mins</li>
               <li>Pay KSh 5,000 deposit via M-Pesa</li>
-              <li>Receive full itinerary & details</li>
+              <li>Receive full itinerary and details</li>
               <li>Pay balance 7 days before travel</li>
-              <li>Travel & enjoy! 🎉</li>
+              <li>Travel and enjoy!</li>
             </ol>
           </div>
         </div>
@@ -186,8 +181,8 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <h4>Traffex Tours & Travel</h4>
-        <p>Your trusted partner for local & international travel.</p>
+        <h4>Traffex Tours &amp; Travel</h4>
+        <p>Your trusted partner for local and international travel.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
@@ -198,16 +193,17 @@
       </div>
       <div>
         <h4>Contact Us</h4>
-        <a href="tel:+254700723928">📞 0700 723 928</a>
-        <a href="mailto:info@traffextours.com">✉️ info@traffextours.com</a>
-        <a href="https://wa.me/254700723928" target="_blank">💬 WhatsApp</a>
+        <a href="tel:+254700723928">0700 723 928</a>
+        <a href="mailto:info@traffextours.com">info@traffextours.com</a>
+        <a href="https://wa.me/254700723928" target="_blank">WhatsApp</a>
       </div>
     </div>
-    <div class="copyright">© 2025 Traffex Tours & Travel. All rights reserved.</div>
+    <div class="copyright">&copy; 2025 Traffex Tours &amp; Travel. All rights reserved.</div>
   </footer>
 
   <a href="https://wa.me/254700723928?text=Hi%20Traffex%2C%20I%20am%20filling%20the%20booking%20form%20and%20need%20help." class="whatsapp-float" target="_blank">
-    💬<span class="tooltip">Need help?</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="30" height="30">
+    <span class="wa-tooltip">Need help?</span>
   </a>
   <script src="main.js"></script>
 </body>
