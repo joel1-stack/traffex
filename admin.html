@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Traffex Tours & Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: var(--light); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-btn { background: none; border: none; padding: 0.75rem 1.5rem; cursor: pointer; font-size: 0.95rem; color: var(--text-light); border-bottom: 3px solid transparent; transition: var(--transition); }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+    .tab-btn:hover { color: var(--primary); }
+    .tabs { display: flex; border-bottom: 1px solid #ddd; margin-bottom: 2rem; background: white; border-radius: var(--radius) var(--radius) 0 0; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <div class="admin-header">
+    <a href="index.html" class="logo" style="color:#fff;">Traffex<span>Admin</span></a>
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <span style="font-size:0.9rem; opacity:0.8;">👤 Admin</span>
+      <a href="index.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4); color:#fff; padding:0.4rem 1rem; font-size:0.9rem;">← View Site</a>
+    </div>
+  </div>
+
+  <div class="admin-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="menu-label">Main</div>
+      <a href="#" class="active" onclick="showTab('dashboard')">📊 Dashboard</a>
+      <a href="#" onclick="showTab('bookings')">📝 Bookings</a>
+      <a href="#" onclick="showTab('enquiries')">✉️ Enquiries</a>
+      <div class="menu-label">Manage</div>
+      <a href="#" onclick="showTab('packages')">📦 Packages</a>
+      <a href="#" onclick="showTab('add-package')">➕ Add Package</a>
+      <div class="menu-label">Other</div>
+      <a href="#" onclick="showTab('settings')">⚙️ Settings</a>
+      <a href="index.html" style="margin-top:2rem; color:rgba(255,255,255,0.4);">← Back to Site</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Dashboard Tab -->
+      <div id="tab-dashboard" class="tab-content active">
+        <h2 style="color:var(--primary); margin-bottom:1.5rem;">Dashboard Overview</h2>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>12</h3>
+            <p>New Bookings</p>
+            <div class="trend">↑ +3 this week</div>
+          </div>
+          <div class="stat-card" style="border-left-color:var(--accent);">
+            <h3>KSh 624K</h3>
+            <p>Revenue This Month</p>
+            <div class="trend">↑ +18% vs last month</div>
+          </div>
+          <div class="stat-card" style="border-left-color:var(--primary);">
+            <h3>48</h3>
+            <p>Total Enquiries</p>
+            <div class="trend">↑ +12 this week</div>
+          </div>
+          <div class="stat-card" style="border-left-color:#E74C3C;">
+            <h3>8</h3>
+            <p>Pending Visas</p>
+            <div class="trend">2 need action today</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--primary); margin-bottom:1rem;">Recent Bookings</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Client</th><th>Package</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTable"></tbody>
+          </table>
+        </div>
+
+        <h3 style="color:var(--primary); margin:2rem 0 1rem;">Quick Actions</h3>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="showTab('add-package')">➕ Add New Package</button>
+          <a href="https://wa.me/254700723928" class="btn btn-accent" target="_blank">💬 Open WhatsApp</a>
+          <button class="btn btn-outline" onclick="showTab('enquiries')">✉️ View Enquiries</button>
+        </div>
+      </div>
+
+      <!-- Bookings Tab -->
+      <div id="tab-bookings" class="tab-content">
+        <h2 style="color:var(--primary); margin-bottom:1.5rem;">All Bookings</h2>
+        <div style="display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+          <input type="text" placeholder="Search by name or ID..." style="padding:0.6rem 1rem; border:1.5px solid #ddd; border-radius:var(--radius); font-size:0.95rem; flex:1; min-width:200px;">
+          <select style="padding:0.6rem 1rem; border:1.5px solid #ddd; border-radius:var(--radius); font-size:0.95rem;">
+            <option>All Status</option>
+            <option>Paid</option>
+            <option>Pending</option>
+            <option>New</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Client</th><th>Package</th><th>Date</th><th>People</th><th>Amount</th><th>Status</th><th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TRX001</strong></td><td>John Kamau</td><td>Masai Mara 3-Day</td><td>2025-06-15</td><td>2</td><td><strong>KSh 70,000</strong></td>
+                <td><span class="status status-paid">Paid</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>TRX002</strong></td><td>Sarah Ochieng</td><td>USA Visa Assist</td><td>2025-06-18</td><td>1</td><td><strong>KSh 8,000</strong></td>
+                <td><span class="status status-pending">Pending</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>TRX003</strong></td><td>Peter Mwangi</td><td>Diani 4-Day</td><td>2025-07-01</td><td>4</td><td><strong>KSh 180,000</strong></td>
+                <td><span class="status status-new">New</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>TRX004</strong></td><td>Grace Wanjiku</td><td>Dubai City Tour</td><td>2025-07-10</td><td>2</td><td><strong>KSh 240,000</strong></td>
+                <td><span class="status status-paid">Paid</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>TRX005</strong></td><td>David Otieno</td><td>Amboseli & Tsavo</td><td>2025-07-20</td><td>3</td><td><strong>KSh 126,000</strong></td>
+                <td><span class="status status-pending">Pending</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Enquiries Tab -->
+      <div id="tab-enquiries" class="tab-content">
+        <h2 style="color:var(--primary); margin-bottom:1.5rem;">Enquiries</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Name</th><th>Email</th><th>Subject</th><th>Status</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-06-10</td><td>Alice Njeri</td><td>alice@email.com</td><td>Masai Mara Package</td>
+                <td><span class="status status-new">New</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">Reply</button></td>
+              </tr>
+              <tr>
+                <td>2025-06-09</td><td>James Omondi</td><td>james@email.com</td><td>UK Visa Assistance</td>
+                <td><span class="status status-pending">In Progress</span></td>
+                <td><button class="btn btn-primary" style="padding:0.3rem 0.8rem; font-size:0.8rem;">Reply</button></td>
+              </tr>
+              <tr>
+                <td>2025-06-08</td><td>Mary Wambui</td><td>mary@email.com</td><td>Dubai Package</td>
+                <td><span class="status status-paid">Resolved</span></td>
+                <td><button class="btn btn-outline" style="padding:0.3rem 0.8rem; font-size:0.8rem;">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Packages Tab -->
+      <div id="tab-packages" class="tab-content">
+        <h2 style="color:var(--primary); margin-bottom:1.5rem;">Manage Packages</h2>
+        <div style="margin-bottom:1rem;">
+          <button class="btn btn-primary" onclick="showTab('add-package')">➕ Add New Package</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Package Name</th><th>Category</th><th>Price (KSh)</th><th>Duration</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Masai Mara Classic</strong></td><td>Local Safari</td><td>35,000</td><td>3 Days</td>
+                <td><span class="status status-paid">Active</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding:0.3rem 0.8rem; font-size:0.8rem; margin-right:0.3rem;">Edit</button>
+                  <button class="btn" style="padding:0.3rem 0.8rem; font-size:0.8rem; background:#FFEBEE; color:#C62828; border:none; border-radius:4px; cursor:pointer;">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Amboseli & Tsavo</strong></td><td>Local Safari</td><td>42,000</td><td>4 Days</td>
+                <td><span class="status status-paid">Active</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding:0.3rem 0.8rem; font-size:0.8rem; margin-right:0.3rem;">Edit</button>
+                  <button class="btn" style="padding:0.3rem 0.8rem; font-size:0.8rem; background:#FFEBEE; color:#C62828; border:none; border-radius:4px; cursor:pointer;">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Diani Beach Luxury</strong></td><td>Beach</td><td>45,000</td><td>4 Days</td>
+                <td><span class="status status-paid">Active</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding:0.3rem 0.8rem; font-size:0.8rem; margin-right:0.3rem;">Edit</button>
+                  <button class="btn" style="padding:0.3rem 0.8rem; font-size:0.8rem; background:#FFEBEE; color:#C62828; border:none; border-radius:4px; cursor:pointer;">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Dubai Shopping & City</strong></td><td>International</td><td>120,000</td><td>5 Days</td>
+                <td><span class="status status-paid">Active</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding:0.3rem 0.8rem; font-size:0.8rem; margin-right:0.3rem;">Edit</button>
+                  <button class="btn" style="padding:0.3rem 0.8rem; font-size:0.8rem; background:#FFEBEE; color:#C62828; border:none; border-radius:4px; cursor:pointer;">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Add Package Tab -->
+      <div id="tab-add-package" class="tab-content">
+        <h2 style="color:var(--primary); margin-bottom:1.5rem;">Add New Package</h2>
+        <div class="admin-form">
+          <form id="addPackageForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Package Name *</label>
+                <input type="text" name="pkg_name" required placeholder="e.g. Masai Mara Classic">
+              </div>
+              <div class="form-group">
+                <label>Category *</label>
+                <select name="pkg_category" required>
+                  <option value="">-- Select --</option>
+                  <option>Local Safari</option>
+                  <option>Beach</option>
+                  <option>International</option>
+                  <option>Visa Service</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Price per Person (KSh) *</label>
+                <input type="number" name="pkg_price" required placeholder="35000">
+              </div>
+              <div class="form-group">
+                <label>Duration *</label>
+                <input type="text" name="pkg_duration" required placeholder="e.g. 3 Days · 2 Nights">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Destination *</label>
+              <input type="text" name="pkg_destination" required placeholder="e.g. Masai Mara, Kenya">
+            </div>
+            <div class="form-group">
+              <label>Package Description *</label>
+              <textarea name="pkg_description" rows="4" required placeholder="Describe the package highlights, inclusions, and what makes it special..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>What's Included (one per line)</label>
+              <textarea name="pkg_includes" rows="4" placeholder="Transport&#10;Accommodation&#10;All Meals&#10;Park Fees&#10;Game Drives"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Package Image URL</label>
+                <input type="url" name="pkg_image" placeholder="https://example.com/image.jpg">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select name="pkg_status">
+                  <option value="active">Active (Visible on site)</option>
+                  <option value="draft">Draft (Hidden)</option>
+                </select>
+              </div>
+            </div>
+            <div style="display:flex; gap:1rem;">
+              <button type="submit" class="btn btn-primary" style="padding:0.9rem 2rem;">✅ Save Package</button>
+              <button type="reset" class="btn btn-outline" style="padding:0.9rem 2rem;">Clear Form</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Settings Tab -->
+      <div id="tab-settings" class="tab-content">
+        <h2 style="color:var(--primary); margin-bottom:1.5rem;">Settings</h2>
+        <div class="admin-form">
+          <h3 style="color:var(--primary); margin-bottom:1.5rem;">Business Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Business Name</label>
+              <input type="text" value="Traffex Tours & Travel">
+            </div>
+            <div class="form-group">
+              <label>WhatsApp Number</label>
+              <input type="tel" value="0700723928">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" value="info@traffextours.com">
+            </div>
+            <div class="form-group">
+              <label>M-Pesa Paybill / Till Number</label>
+              <input type="text" placeholder="e.g. 123456">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Business Address</label>
+            <input type="text" placeholder="Nairobi, Kenya">
+          </div>
+          <button class="btn btn-primary" style="padding:0.9rem 2rem;">💾 Save Settings</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    function showTab(name) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+      const tab = document.getElementById('tab-' + name);
+      if (tab) tab.classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
